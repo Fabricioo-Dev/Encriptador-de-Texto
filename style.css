@@ -1,0 +1,527 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*----- COLORES -----*/
+:root {
+    --principal-color-bg: #1F1F1F;
+    --principal-color-texto: #FFFFFF;
+    --primario-color: #4A90E2;
+    --secundario-color: #2C3E50;
+    --color: #50E3C2;
+    --error-color: #D0021B;
+    --success-color: #7ED321;
+    --font-family: 'Roboto', sans-serif;
+    --boton-bg: #333333; /* Gris oscuro para el fondo del botón */
+    --boton-texto: #F0F0F0; /* Texto claro para el botón */
+    --textarea-bg: #37474F;/* Azul grisáceo oscuro */
+    --textarea-texto: #ECEFF1;/* Gris claro */
+    --textarea-placeholder: #B0BEC5;/* Gris azul claro */
+    --bg-gris: #3C3C3C;/* Fondo gris medio */
+    --texto-gris: #E0E0E0;/* Texto claro */
+}
+
+body {
+    background-color: var(--principal-color-bg);
+    color: var(--principal-color-texto);
+    font-family: var(--font-family);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+/*----- HEADER -----*/
+.header {
+    width: 100%;
+    height: 4rem;
+    background-color: var(--secundario-color);
+}
+
+.nav {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.nav__contenido {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.nav__contenido_imagen {
+    width: 6.25rem;
+    height: auto;
+}
+
+.nav__contenido_titulo {
+    margin: 0;
+    flex-grow: 1;
+    text-align: center;
+    font-size: 2rem;
+    color: var(--boton-texto);
+}
+
+/*----- MAIN -----*/
+main {
+    width: 100%;
+    flex-grow: 1;
+    display: flex;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main__contenido1,
+.main__contenido2 {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.main__contenido1 {
+    padding: 1.25rem;
+    
+}
+
+.contenido2_bg {
+    background-color: var(--bg-gris);
+    width: 60%;
+    height: 95%;
+    border-radius: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    box-sizing: border-box;
+    text-align: center;
+    box-shadow: 0 0.5rem 1rem rgba(0.3, 0.3, 0.3, 0.7);
+}
+
+#contenido2_texto2 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.textoEncriptado {
+    font-size: 1.8rem;
+    padding: 1rem;
+    text-align: start;
+    flex: 1;
+    overflow-y: auto;
+}
+
+/*Boton de cipiar texto*/
+.copiar_texto {
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    color: #fff;
+    padding: 0.8rem 0.7rem;
+    border: none;
+    border-radius: 2rem;
+    cursor: pointer;
+    font-size: 1.4rem;
+    font-family: 'Roboto', sans-serif;
+    box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease, transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 2rem;
+    /* Espacio entre el texto y el botón */
+    width: 10rem;
+    /* Ancho del botón */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.copiar_texto:hover {
+    background: linear-gradient(135deg, #a777e3, #6e8efb);
+    transform: scale(1.05);
+}
+
+.copiar_texto:active {
+    transform: scale(0.98);
+}
+
+.copiar_texto a {
+    color: #fff;
+    text-decoration: none;
+}
+
+
+.contenido2_bg img {
+    max-width: 80%;
+    height: auto;
+    margin-bottom: 1rem;
+    margin-top: 10%;
+}
+
+.contenido2_bg h2 {
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--principal-color-texto);
+}
+
+.contenido2_bg p {
+    font-size: 1.7rem;
+    margin-bottom: 2rem;
+    color: var(--textarea-texto);
+}
+
+.main__contenido1 textarea {
+    width: 90%;
+    height: 30rem;
+    min-height: 20rem;
+    max-height: 60rem; /* Establece una altura máxima */
+    padding: 0.625rem;
+    border: 0.0625rem solid var(--primario-color);
+    border-radius: 0.6rem;
+    font-family: var(--font-family);
+    font-size: 1.5rem;
+    background-color: var(--secundario-color);
+    color: var(--textarea-texto);
+    resize: vertical;
+    overflow: auto;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.main__contenido1 textarea:focus {
+    border-color: var(--primario-color);
+    outline: none;
+    box-shadow: 0 0 0.5rem var(--primario-color);
+}
+
+.main__contenido1 textarea::placeholder {
+    color: var(--textarea-placeholder);
+    font-size: 1.5rem;
+}
+.main__contenido1 span {
+    width: 90%;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.3rem;
+    margin-top: 0.6rem;
+    font-size: 0.9rem;
+    color: #FFFFFF;
+}
+.main__contenido1 img{
+    height: 0.9rem;
+    width: 0.9rem;
+}
+
+.main__contenido1 .button-container {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1.5rem;
+    gap: 20%;
+}
+
+.main__contenido1 button {
+    padding: 1rem 1.9rem;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 1.6rem;
+    cursor: pointer;
+    background-color: var(--boton-bg);
+    color: var(--boton-texto);
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+.main__contenido1 button .btn-encriptar{
+    background-color:var(--secundario-color);
+}
+
+.main__contenido1 button:hover {
+    background-color: var(--color);
+    color: var(--principal-color-bg);
+    transform: scale(1.09);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.7);
+}
+
+#mensaje-error {
+    color: #d66c1c;
+    background-color: #fff4e6;
+    border: 0.1rem solid #f5d0a9;
+    border-radius: 0.5rem;
+    padding: 0.8rem 1.2rem;
+    font-size: 1.1rem;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    margin-top: 0.8rem;
+    display: none;
+    width: 100%;
+    box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.2);
+}
+#mensaje-copiado {
+    font-size: 1.2rem;
+    margin-top: 0.8rem;
+    margin-bottom: 0;
+}
+
+
+/*----- FOOTER -----*/
+.footer {
+    width: 100%;
+    height: 3rem;
+    background-color: var(--secundario-color);
+    color: var(--principal-color-texto);
+    text-align: center;
+    padding: 1.2rem 0;
+    position: sticky;
+    bottom: 0;
+    margin-top: auto;
+}
+
+.footer__contenido p {
+    margin: 0;
+    font-family: var(--font-family);
+    font-weight: 400;
+}
+
+.footer__contenido a {
+    color: var(--primario-color);
+    text-decoration: none;
+}
+
+.footer__contenido a:hover {
+    text-decoration: underline;
+}
+
+
+/*----- MEDIA QUERIES -----*/
+
+@media (max-width: 1200px) {
+    .nav {
+        width: 80%;
+    }
+
+    .main__contenido1 textarea {
+        height: 25rem;
+    }
+
+    .main__contenido1 button {
+        padding: 1rem 1.7rem;
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .nav {
+        width: 90%;
+    }
+
+    .main__contenido1 textarea {
+        height: 20rem;
+    }
+
+    .main__contenido1 button {
+        padding: 0.9rem 1.5rem;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav {
+        width: 95%;
+    }
+
+    .nav__contenido_titulo {
+        font-size: 1.5rem;
+    }
+
+    .main {
+        flex-direction: column;
+    }
+
+    .main__contenido1,
+    .main__contenido2 {
+        width: 100%;
+    }
+
+    .main__contenido1 textarea {
+        width: 100%;
+        height: 15rem;
+    }
+
+    .contenido2_bg {
+        width: 80%;
+        margin-top: 1rem;
+    }
+
+    .contenido2_bg img {
+        display: none;
+    }
+
+    .main__contenido1 button {
+        padding: 0.8rem 1.4rem;
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 576px) {
+
+    .header,
+    .footer {
+        height: 3rem;
+    }
+
+    .nav__contenido {
+        padding: 0.5rem;
+    }
+
+    .nav__contenido_imagen {
+        width: 4rem;
+        height: auto;
+    }
+
+    .nav__contenido_titulo {
+        font-size: 1.2rem;
+    }
+
+    .contenido2_bg {
+        width: 90%;
+        padding: 1rem;
+    }
+
+    .contenido2_bg h2 {
+        font-size: 1.2rem;
+    }
+
+    .contenido2_bg p {
+        font-size: 0.9rem;
+    }
+
+    .contenido2_bg button {
+        padding: 0.5rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    .main__contenido1 textarea {
+        width: 95%;
+        height: 10rem;
+    }
+
+    .footer__contenido p {
+        font-size: 0.8rem;
+    }
+
+    .main__contenido1 button {
+        padding: 0.7rem 1.3rem;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .header,
+    .footer {
+        height: 3rem;
+    }
+
+    .nav__contenido {
+        padding: 0.5rem;
+    }
+
+    .nav__contenido_imagen {
+        width: 3rem;
+        height: auto;
+    }
+
+    .nav__contenido_titulo {
+        font-size: 1rem;
+    }
+
+    .contenido2_bg h2 {
+        font-size: 1rem;
+    }
+
+    .contenido2_bg p {
+        font-size: 0.8rem;
+    }
+
+    .contenido2_bg button {
+        padding: 0.4rem 1rem;
+        font-size: 0.8rem;
+    }
+
+    .footer__contenido p {
+        font-size: 0.7rem;
+    }
+
+    .main__contenido1 textarea {
+        width: 90%;
+        height: 8rem;
+    }
+
+    .main__contenido1 button {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 375px) {
+
+    .header,
+    .footer {
+        height: 2.5rem;
+    }
+
+    .nav__contenido {
+        padding: 0.5rem;
+    }
+
+    .nav__contenido_imagen {
+        width: 2.5rem;
+        height: auto;
+    }
+
+    .nav__contenido_titulo {
+        font-size: 1rem;
+    }
+
+    .contenido2_bg {
+        width: 95%;
+        padding: 0.5rem;
+    }
+
+    .contenido2_bg h2 {
+        font-size: 1rem;
+    }
+
+    .contenido2_bg p {
+        font-size: 0.7rem;
+    }
+
+    .contenido2_bg button {
+        padding: 0.3rem 1rem;
+        font-size: 0.7rem;
+    }
+
+    .main__contenido1 textarea {
+        width: 90%;
+        height: 8rem;
+    }
+
+    .footer__contenido p {
+        font-size: 0.6rem;
+    }
+
+    .main__contenido1 button {
+        padding: 0.6rem 0.9rem;
+        font-size: 0.8rem;
+    }
+}
