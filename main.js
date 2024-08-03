@@ -89,26 +89,17 @@ function desencriptarTexto() {
 mensajeCopiarTexto.style.display = "none"; 
 //----- FUNCION BOTON COPIAR TEXTO -----//
 function copiarTexto() {
-  let textoEncriptado = document.querySelector(".textoEncriptado").innerHTML;
+  let textoEncriptado = textoEncriptado_Desencriptado.textContent;
 
-  let textarea = document.createElement("textarea");
-  textarea.value = textoEncriptado;
-  document.body.appendChild(textarea);
-
-  textarea.select();
-  textarea.setSelectionRange(0, 99999); 
-
-  
-  navigator.clipboard.writeText(textarea.value).then(() => {
-      
+  navigator.clipboard
+    .writeText(textoEncriptado)
+    .then(() => {
       mensajeCopiarTexto.textContent = "¡Texto copiado con éxito!";
       mensajeCopiarTexto.style.display = "block";
-      
+
       setTimeout(() => {
         mensajeCopiarTexto.style.display = "none";
       }, 3000);
-    
-      document.body.removeChild(textarea);
     })
     .catch((err) => {
       console.error("Error al copiar el texto: ", err);
